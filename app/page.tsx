@@ -190,7 +190,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative min-h-[420px]">
+          <div className="relative min-h-[560px] md:min-h-[640px]">
             <div className="absolute inset-[18px] rounded-[1.5rem] border border-white/60 bg-gradient-to-br from-white via-[#EEF3F8] to-[#DDE8EE] shadow-[0_28px_70px_-34px_rgba(11,31,58,0.28)]" />
             <div className="absolute inset-8 rounded-[1.35rem] border border-navy/10 bg-navy p-10 text-white shadow-[0_30px_80px_-38px_rgba(11,31,58,0.6)] md:p-12">
               <div className="absolute inset-0 rounded-[1.35rem] bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:28px_28px] opacity-30" />
@@ -221,7 +221,7 @@ export default function HomePage() {
               <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-slate">Initiatives Supported</p>
             </div>
 
-            <div className="absolute -bottom-8 right-0 rounded-[1rem] border border-navy/10 bg-white/95 px-5 py-4 shadow-[0_20px_44px_-26px_rgba(11,31,58,0.3)] md:-right-10 md:w-56">
+            <div className="absolute -bottom-12 right-0 rounded-[1rem] border border-navy/10 bg-white/95 px-5 py-4 shadow-[0_20px_44px_-26px_rgba(11,31,58,0.3)] md:-bottom-10 md:-right-10 md:w-56">
               <p className="text-sm font-semibold text-navy">Trusted for executive-facing delivery</p>
               <p className="mt-2 text-sm leading-6 text-slate">Built for structured decision-making, stakeholder confidence, and measurable outcomes.</p>
             </div>
