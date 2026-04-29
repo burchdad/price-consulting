@@ -190,9 +190,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative min-h-[730px] md:min-h-[810px]">
-            <div className="absolute inset-x-[18px] top-[18px] bottom-[2px] rounded-[1.5rem] border border-white/60 bg-gradient-to-br from-white via-[#EEF3F8] to-[#DDE8EE] shadow-[0_28px_70px_-34px_rgba(11,31,58,0.28)]" />
-            <div className="absolute inset-x-8 top-8 bottom-0 rounded-[1.35rem] border border-navy/10 bg-navy p-10 text-white shadow-[0_30px_80px_-38px_rgba(11,31,58,0.6)] md:bottom-2 md:p-12">
+          <div className="relative min-h-[750px] md:min-h-[830px]">
+            <div className="absolute inset-x-[18px] top-[18px] bottom-0 rounded-[1.5rem] border border-white/60 bg-gradient-to-br from-white via-[#EEF3F8] to-[#DDE8EE] shadow-[0_28px_70px_-34px_rgba(11,31,58,0.28)]" />
+            <div className="absolute inset-x-8 top-8 bottom-[-4px] rounded-[1.35rem] border border-navy/10 bg-navy p-10 text-white shadow-[0_30px_80px_-38px_rgba(11,31,58,0.6)] md:bottom-0 md:p-12">
               <div className="absolute inset-0 rounded-[1.35rem] bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:28px_28px] opacity-30" />
               <div className="absolute inset-0 rounded-[1.35rem] bg-[radial-gradient(circle_at_20%_20%,rgba(15,118,110,0.18),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05),transparent_28%)]" />
               <div className="relative">
