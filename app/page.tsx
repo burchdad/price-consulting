@@ -191,30 +191,37 @@ export default function HomePage() {
           </div>
 
           <div className="relative min-h-[420px]">
-            <div className="absolute inset-0 rounded-[2rem] border border-white/50 bg-gradient-to-br from-white via-[#EEF3F8] to-[#DDE8EE] shadow-[0_30px_80px_-30px_rgba(11,31,58,0.32)]" />
-            <div className="absolute inset-5 rounded-[1.75rem] border border-navy/10 bg-navy p-8 text-white md:p-10">
+            <div className="absolute inset-[18px] rounded-[1.5rem] border border-white/60 bg-gradient-to-br from-white via-[#EEF3F8] to-[#DDE8EE] shadow-[0_28px_70px_-34px_rgba(11,31,58,0.28)]" />
+            <div className="absolute inset-8 rounded-[1.35rem] border border-navy/10 bg-navy p-10 text-white shadow-[0_30px_80px_-38px_rgba(11,31,58,0.6)] md:p-12">
+              <div className="absolute inset-0 rounded-[1.35rem] bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:28px_28px] opacity-30" />
+              <div className="absolute inset-0 rounded-[1.35rem] bg-[radial-gradient(circle_at_20%_20%,rgba(15,118,110,0.18),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05),transparent_28%)]" />
+              <div className="relative">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/80">Advisory Snapshot</p>
-              <h2 className="mt-5 font-serif text-3xl font-semibold leading-tight md:text-4xl">
+              <h2 className="mt-6 max-w-xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
                 A disciplined advisory partner for strategy, modernization, and execution oversight.
               </h2>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="mt-5 max-w-lg text-sm leading-7 text-slate-200">
+                Executive advisory support shaped for modernization efforts, program governance, and mission delivery environments where trust and clarity matter.
+              </p>
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1rem] border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-sm">
                   <p className="text-3xl font-semibold text-white">15+ yrs</p>
                   <p className="mt-2 text-sm leading-6 text-slate-200">Supporting executive stakeholders across mission, operations, and performance management.</p>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="rounded-[1rem] border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-sm">
                   <p className="text-3xl font-semibold text-white">Cross-sector</p>
                   <p className="mt-2 text-sm leading-6 text-slate-200">Perspective spanning agencies, implementation partners, and high-visibility transformation efforts.</p>
                 </div>
               </div>
             </div>
+            </div>
 
-            <div className="absolute -left-2 top-8 rounded-2xl border border-navy/10 bg-white/95 p-4 shadow-panel md:-left-10 md:w-52">
-              <p className="text-2xl font-semibold text-navy">50+</p>
+            <div className="absolute -left-4 -top-3 rounded-[1rem] border border-navy/10 bg-white/95 px-4 py-3 shadow-[0_18px_40px_-24px_rgba(11,31,58,0.35)] md:-left-14 md:-top-5 md:w-44">
+              <p className="text-xl font-semibold text-navy">50+</p>
               <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-slate">Initiatives Supported</p>
             </div>
 
-            <div className="absolute -bottom-4 right-2 rounded-2xl border border-navy/10 bg-white/95 p-4 shadow-panel md:-right-8 md:w-56">
+            <div className="absolute -bottom-8 right-0 rounded-[1rem] border border-navy/10 bg-white/95 px-5 py-4 shadow-[0_20px_44px_-26px_rgba(11,31,58,0.3)] md:-right-10 md:w-56">
               <p className="text-sm font-semibold text-navy">Trusted for executive-facing delivery</p>
               <p className="mt-2 text-sm leading-6 text-slate">Built for structured decision-making, stakeholder confidence, and measurable outcomes.</p>
             </div>
