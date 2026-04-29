@@ -19,7 +19,8 @@ const config: Config = {
         serif: ["var(--font-source-serif)", "serif"]
       },
       boxShadow: {
-        panel: "0 10px 30px -15px rgba(11, 31, 58, 0.22)"
+        panel: "0 10px 30px -15px rgba(11, 31, 58, 0.22)",
+        float: "0 4px 16px -4px rgba(11, 31, 58, 0.14), 0 20px 50px -20px rgba(11, 31, 58, 0.22)"
       }
     }
   },

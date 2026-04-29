@@ -191,19 +191,19 @@ export default function HomePage() {
           </div>
 
           <div className="relative min-h-[750px] md:min-h-[830px]">
-            <div className="absolute inset-x-[18px] top-[18px] bottom-0 rounded-[1.5rem] border border-white/60 bg-gradient-to-br from-white via-[#EEF3F8] to-[#DDE8EE] shadow-[0_28px_70px_-34px_rgba(11,31,58,0.28)]" />
-            <div className="absolute inset-x-8 top-8 bottom-[-4px] rounded-[1.35rem] border border-navy/10 bg-navy p-10 text-white shadow-[0_30px_80px_-38px_rgba(11,31,58,0.6)] md:bottom-0 md:p-12">
-              <div className="absolute inset-0 rounded-[1.35rem] bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:28px_28px] opacity-30" />
+            <div className="absolute inset-x-[18px] top-[18px] bottom-0 rounded-[1.5rem] border border-white/60 bg-gradient-to-br from-white via-[#EEF3F8] to-[#DDE8EE] shadow-[0_2px_8px_-2px_rgba(11,31,58,0.07),0_28px_70px_-34px_rgba(11,31,58,0.28)]" />
+            <div className="absolute inset-x-8 top-8 bottom-[-4px] rounded-[1.35rem] border border-navy/10 bg-navy p-11 text-white shadow-[0_6px_24px_-8px_rgba(11,31,58,0.22),0_42px_100px_-30px_rgba(11,31,58,0.65)] md:bottom-0 md:p-14">
+              <div className="absolute inset-0 rounded-[1.35rem] bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:24px_24px] opacity-[0.6]" />
               <div className="absolute inset-0 rounded-[1.35rem] bg-[radial-gradient(circle_at_20%_20%,rgba(15,118,110,0.18),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05),transparent_28%)]" />
               <div className="relative">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/80">Advisory Snapshot</p>
-              <h2 className="mt-6 max-w-xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
+              <h2 className="mt-7 max-w-xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
                 A disciplined advisory partner for strategy, modernization, and execution oversight.
               </h2>
-              <p className="mt-5 max-w-lg text-sm leading-7 text-slate-200">
+              <p className="mt-6 max-w-lg text-sm leading-7 text-slate-200">
                 Executive advisory support shaped for modernization efforts, program governance, and mission delivery environments where trust and clarity matter.
               </p>
-              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              <div className="mt-12 grid gap-5 sm:grid-cols-2">
                 <div className="rounded-[1rem] border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-sm">
                   <p className="text-3xl font-semibold text-white">15+ yrs</p>
                   <p className="mt-2 text-sm leading-6 text-slate-200">Supporting executive stakeholders across mission, operations, and performance management.</p>
@@ -216,12 +216,12 @@ export default function HomePage() {
             </div>
             </div>
 
-            <div className="absolute -left-4 -top-3 rounded-[1rem] border border-navy/10 bg-white/95 px-4 py-3 shadow-[0_18px_40px_-24px_rgba(11,31,58,0.35)] md:-left-14 md:-top-5 md:w-44">
+            <div className="absolute -left-4 -top-3 rounded-[1rem] border border-navy/10 bg-white/95 px-4 py-3 shadow-float md:-left-14 md:-top-5 md:w-40">
               <p className="text-xl font-semibold text-navy">50+</p>
               <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-slate">Initiatives Supported</p>
             </div>
 
-            <div className="absolute -bottom-20 right-0 rounded-[1rem] border border-navy/10 bg-white/95 px-5 py-4 shadow-[0_20px_44px_-26px_rgba(11,31,58,0.3)] md:-bottom-18 md:-right-24 lg:-right-28 md:w-56">
+            <div className="absolute -bottom-20 right-0 rounded-[1rem] border border-navy/10 bg-white/95 px-5 py-4 shadow-float md:-bottom-18 md:-right-24 lg:-right-28 md:w-52">
               <p className="text-sm font-semibold text-navy">Trusted for executive-facing delivery</p>
               <p className="mt-2 text-sm leading-6 text-slate">Built for structured decision-making, stakeholder confidence, and measurable outcomes.</p>
             </div>
@@ -367,7 +367,7 @@ export default function HomePage() {
         <h2 className="section-title mt-3">Flexible Structures for Complex Mission Demands</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {engagementModels.map((model) => (
-            <article key={model.title} className="rounded-2xl border border-navy/10 bg-white p-6">
+            <article key={model.title} className="rounded-2xl border border-navy/10 bg-white p-7 shadow-panel">
               <h3 className="text-lg font-semibold text-navy">{model.title}</h3>
               <p className="mt-3 text-sm leading-7 text-slate">{model.detail}</p>
             </article>
@@ -414,9 +414,32 @@ export default function HomePage() {
             <p className="mt-5 text-sm leading-7 text-slate-200">
               A clean, executive-ready summary designed for contracting officers, program leaders, and teaming partners.
             </p>
+            <div className="mt-8 rounded-xl border border-white/15 bg-white/5 px-5 py-5">
+              <div className="mb-4 flex items-start gap-3">
+                <div className="flex h-10 w-8 flex-shrink-0 flex-col items-center justify-center gap-[3px] rounded border border-white/20 bg-white/10 py-1.5">
+                  <div className="h-[2px] w-5 rounded-full bg-teal/60" />
+                  <div className="h-[2px] w-4 rounded-full bg-white/40" />
+                  <div className="h-[2px] w-5 rounded-full bg-white/25" />
+                  <div className="h-[2px] w-3 rounded-full bg-white/20" />
+                </div>
+                <div className="flex-1 space-y-1.5 pt-1">
+                  <div className="h-2 w-2/3 rounded-full bg-white/30" />
+                  <div className="h-1.5 w-1/2 rounded-full bg-white/15" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <div className="h-1.5 w-full rounded-full bg-white/20" />
+                <div className="h-1.5 w-5/6 rounded-full bg-white/15" />
+                <div className="h-1.5 w-full rounded-full bg-white/20" />
+                <div className="h-1.5 w-4/5 rounded-full bg-white/15" />
+                <div className="h-1.5 w-11/12 rounded-full bg-white/20" />
+                <div className="h-1.5 w-2/3 rounded-full bg-white/10" />
+              </div>
+              <p className="mt-3.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-teal/60">Price Consulting, LLC · Capabilities Statement</p>
+            </div>
             <a
               href={company.capabilitiesStatementUrl}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-navy transition hover:bg-slate-100"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-navy shadow-[0_4px_20px_rgba(255,255,255,0.25)] transition hover:bg-slate-100 hover:shadow-[0_6px_28px_rgba(255,255,255,0.35)]"
             >
               <FileDown size={16} />
               Download Capabilities Statement
@@ -449,7 +472,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-teal transition hover:bg-slate-100 md:mt-0"
+            className="mt-6 inline-flex items-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-teal shadow-[0_4px_24px_rgba(255,255,255,0.3)] transition hover:bg-slate-50 hover:shadow-[0_6px_32px_rgba(255,255,255,0.45)] md:mt-0"
           >
             Start the Conversation
           </Link>

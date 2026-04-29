@@ -12,7 +12,7 @@ export default function Footer() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-navy transition hover:bg-slate-100"
+            className="inline-flex items-center justify-center rounded-full bg-teal px-7 py-4 text-sm font-semibold text-white shadow-[0_4px_24px_rgba(15,118,110,0.5)] transition hover:bg-teal/90 hover:shadow-[0_6px_32px_rgba(15,118,110,0.65)]"
           >
             Schedule a Consultation
           </Link>
