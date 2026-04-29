@@ -41,12 +41,14 @@ export default function ServicesPage() {
       <p className="kicker">Services</p>
       <h1 className="section-title mt-3">Federal advisory services built for real-world mission delivery.</h1>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
+      <div className="mt-10 intel-panel px-7 shadow-panel">
         {services.map((service) => (
-          <article key={service.title} className="intel-panel p-6 shadow-panel">
-            <service.icon className="h-7 w-7 text-teal" />
-            <h2 className="mt-4 text-2xl font-semibold text-white">{service.title}</h2>
-            <p className="mt-3 text-sm leading-7 text-slate">{service.body}</p>
+          <article key={service.title} className="brief-row last:border-b-0">
+            <div className="grid gap-3 md:grid-cols-[24px_260px_1fr] md:gap-6">
+              <service.icon className="mt-1 h-5 w-5 text-teal" />
+              <h2 className="text-lg font-semibold text-white md:text-xl">{service.title}</h2>
+              <p className="text-sm leading-7 text-slate">{service.body}</p>
+            </div>
           </article>
         ))}
       </div>

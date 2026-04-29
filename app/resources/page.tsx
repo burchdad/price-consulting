@@ -37,31 +37,29 @@ export default function ResourcesPage() {
       <p className="kicker">Resources</p>
       <h1 className="section-title mt-3">Insights and guidance for federal decision-makers.</h1>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <article className="intel-panel p-6 shadow-panel">
-          <h2 className="text-2xl font-semibold text-white">Capability Brief</h2>
-          <p className="mt-3 text-sm leading-7 text-slate">
-            Download our capabilities statement to review core competencies, differentiators, and engagement models.
-          </p>
-          <a
-            href={company.capabilitiesStatementUrl}
-            className="cta-primary mt-5"
-          >
-            Download Capability Brief
-          </a>
+      <div className="mt-10 intel-panel px-7 shadow-panel">
+        <article className="brief-row">
+          <div className="grid gap-4 md:grid-cols-[220px_1fr_auto] md:items-center md:gap-6">
+            <h2 className="text-lg font-semibold uppercase tracking-[0.03em] text-white">Capability Brief</h2>
+            <p className="text-sm leading-7 text-slate">
+              Review core competencies, differentiators, and engagement models in a concise executive format.
+            </p>
+            <a href={company.capabilitiesStatementUrl} className="cta-primary">
+              Access Capability Brief
+            </a>
+          </div>
         </article>
 
-        <article className="intel-panel p-6 shadow-panel">
-          <h2 className="text-2xl font-semibold text-white">Need a tailored briefing?</h2>
-          <p className="mt-3 text-sm leading-7 text-slate">
-            We can provide a focused consultation around your mission priorities, transformation goals, and operating context.
-          </p>
-          <Link
-            href="/contact"
-            className="cta-secondary mt-5"
-          >
-            Request Strategic Briefing
-          </Link>
+        <article className="py-5">
+          <div className="grid gap-4 md:grid-cols-[220px_1fr_auto] md:items-center md:gap-6">
+            <h2 className="text-lg font-semibold uppercase tracking-[0.03em] text-white">Tailored Briefing</h2>
+            <p className="text-sm leading-7 text-slate">
+              Request focused guidance around mission priorities, transformation goals, and operating constraints.
+            </p>
+            <Link href="/contact" className="cta-secondary">
+              Request Strategic Briefing
+            </Link>
+          </div>
         </article>
       </div>
 

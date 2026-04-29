@@ -16,7 +16,7 @@ export default function Footer() {
             href="/contact"
             className="cta-primary"
           >
-            Initiate Consultation
+            Initiate Advisory Discussion
           </Link>
         </div>
 
@@ -32,7 +32,7 @@ export default function Footer() {
                 href={company.capabilitiesStatementUrl}
                 className="inline-flex items-center rounded-lg border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-teal hover:text-teal"
               >
-                Download Capability Brief
+                Access Capability Brief
               </a>
               <a
                 href={company.linkedin}

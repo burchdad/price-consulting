@@ -2,13 +2,9 @@ import { Metadata } from "next";
 import {
   ArrowRight,
   BriefcaseBusiness,
-  Building2,
   ChartNoAxesColumn,
-  ClipboardCheck,
   FileDown,
   Landmark,
-  LockKeyhole,
-  Network,
   ShieldCheck
 } from "lucide-react";
 import Link from "next/link";
@@ -60,27 +56,10 @@ const metrics = [
   }
 ];
 
-const trustCards = [
-  {
-    title: "Federal Context",
-    detail: "Built for public-sector decision cycles and mission-critical accountability.",
-    icon: Building2
-  },
-  {
-    title: "Secure Delivery Mindset",
-    detail: "Structured for discretion, governance discipline, and executive trust.",
-    icon: LockKeyhole
-  },
-  {
-    title: "Acquisition Alignment",
-    detail: "Operating models aligned to procurement constraints and partner ecosystems.",
-    icon: ClipboardCheck
-  },
-  {
-    title: "Cross-Functional Coordination",
-    detail: "Unified execution narrative across leadership, program, and delivery teams.",
-    icon: Network
-  }
+const trustRows = [
+  "Federal context and mission-accountability fluency.",
+  "Secure delivery posture for high-scrutiny initiatives.",
+  "Acquisition-aligned operating support and executive reporting."
 ];
 
 const outcomes = [
@@ -121,7 +100,7 @@ export default function HomePage() {
               </Link>
               <a href={company.capabilitiesStatementUrl} className="cta-secondary">
                 <FileDown size={16} />
-                Download Capability Brief
+                Access Capability Brief
               </a>
             </div>
           </div>
@@ -136,14 +115,10 @@ export default function HomePage() {
               <p className="mt-5 text-sm leading-7 text-slate">
                 Advisory coverage spanning strategy, modernization controls, and stakeholder-aligned execution rhythm.
               </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border border-white/10 bg-navy/55 p-4">
+              <div className="mt-8 grid gap-4">
+                <div className="rounded-md border border-white/10 bg-navy/55 p-4">
                   <p className="text-3xl font-semibold text-white">15+ yrs</p>
                   <p className="mt-2 text-sm text-slate">Supporting federal mission leaders and delivery stakeholders.</p>
-                </div>
-                <div className="rounded-lg border border-white/10 bg-navy/55 p-4">
-                  <p className="text-3xl font-semibold text-white">Cross-sector</p>
-                  <p className="mt-2 text-sm text-slate">Agency and implementation perspective for complex initiatives.</p>
                 </div>
               </div>
             </div>
@@ -154,12 +129,10 @@ export default function HomePage() {
       <section className="border-b intel-divider py-12">
         <div className="section-wrap">
           <p className="kicker">Operating Advantages</p>
-          <div className="mt-6 grid gap-4 md:grid-cols-4">
-            {trustCards.map((card) => (
-              <div key={card.title} className="intel-panel p-5">
-                <card.icon className="h-5 w-5 text-teal" />
-                <h3 className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-white">{card.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate">{card.detail}</p>
+          <div className="mt-6 intel-panel px-6">
+            {trustRows.map((row, index) => (
+              <div key={row} className={index === trustRows.length - 1 ? "py-5" : "brief-row"}>
+                <p className="text-sm leading-7 text-slate">{row}</p>
               </div>
             ))}
           </div>
@@ -171,12 +144,16 @@ export default function HomePage() {
       <section className="section-wrap py-20 md:py-24">
         <p className="kicker">Core Services</p>
         <h2 className="section-title mt-3">Advisory coverage for strategy, modernization, and execution control.</h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 intel-panel px-7">
           {services.map((service) => (
-            <article key={service.title} className="intel-panel p-7">
-              <service.icon className="h-7 w-7 text-teal" />
-              <h3 className="mt-4 text-2xl font-semibold text-white">{service.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate">{service.description}</p>
+            <article key={service.title} className="brief-row last:border-b-0">
+              <div className="flex items-start gap-4">
+                <service.icon className="mt-1 h-5 w-5 text-teal" />
+                <div>
+                  <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate">{service.description}</p>
+                </div>
+              </div>
             </article>
           ))}
         </div>
@@ -186,11 +163,11 @@ export default function HomePage() {
         <div className="section-wrap">
           <p className="kicker">Client Outcomes</p>
           <h2 className="section-title mt-3">Representative impact in high-accountability engagements.</h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 intel-panel px-7">
             {outcomes.map((outcome) => (
-              <article key={outcome.title} className="intel-panel p-7">
+              <article key={outcome.title} className="brief-row last:border-b-0">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">Anonymized Outcome</p>
-                <h3 className="mt-4 text-xl font-semibold text-white">{outcome.title}</h3>
+                <h3 className="mt-3 text-lg font-semibold text-white">{outcome.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate">{outcome.detail}</p>
               </article>
             ))}
@@ -211,7 +188,7 @@ export default function HomePage() {
             </p>
           </div>
           <Link href="/contact" className="cta-primary relative mt-6 md:mt-0">
-            Initiate Consultation
+            Initiate Advisory Discussion
           </Link>
         </div>
       </section>
@@ -228,7 +205,7 @@ export default function HomePage() {
           <div className="intel-panel p-6 md:col-span-2">
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/75">Capability Access</h3>
             <h2 className="mt-4 font-serif text-4xl font-semibold uppercase leading-[1] tracking-[0.03em] text-white md:text-5xl">
-              Download the mission capability brief.
+              Access the mission capability brief.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate">
               A concise overview of competencies, differentiators, and engagement structures for contracting and
@@ -236,7 +213,7 @@ export default function HomePage() {
             </p>
             <a href={company.capabilitiesStatementUrl} className="cta-secondary mt-7">
               <FileDown size={16} />
-              Download Capability Brief
+              Access Capability Brief
             </a>
           </div>
         </div>

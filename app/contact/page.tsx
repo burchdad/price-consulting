@@ -14,23 +14,23 @@ export default function ContactPage() {
       <h1 className="section-title mt-3">Request Strategic Briefing</h1>
 
       <div className="mt-8 grid gap-8 md:grid-cols-[1fr_1.35fr]">
-        <aside className="intel-panel p-6 shadow-panel">
-          <h2 className="text-2xl font-semibold text-white">Connect with our team</h2>
+        <aside className="intel-panel px-6 py-2 shadow-panel">
+          <h2 className="pt-4 text-sm font-semibold uppercase tracking-[0.18em] text-teal/80">Contact Ledger</h2>
           <p className="mt-3 text-sm leading-7 text-slate">
             Share your mission priorities and engagement objectives. We will respond with a recommended next step.
           </p>
 
-          <dl className="mt-6 space-y-4 text-sm text-slate">
-            <div>
-              <dt className="font-semibold text-white">Phone</dt>
-              <dd>{company.phone}</dd>
+          <dl className="mt-4 text-sm text-slate">
+            <div className="brief-row">
+              <dt className="font-semibold uppercase tracking-[0.12em] text-white">Phone</dt>
+              <dd className="mt-2">{company.phone}</dd>
             </div>
-            <div>
-              <dt className="font-semibold text-white">Email</dt>
-              <dd>{company.email}</dd>
+            <div className="brief-row">
+              <dt className="font-semibold uppercase tracking-[0.12em] text-white">Email</dt>
+              <dd className="mt-2">{company.email}</dd>
             </div>
-            <div>
-              <dt className="font-semibold text-white">Office</dt>
+            <div className="py-5">
+              <dt className="font-semibold uppercase tracking-[0.12em] text-white">Office</dt>
               <dd>
                 {company.address.streetAddress}, {company.address.addressLocality}, {company.address.addressRegion}{" "}
                 {company.address.postalCode}

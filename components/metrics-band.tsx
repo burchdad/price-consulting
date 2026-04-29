@@ -16,7 +16,7 @@ type Props = {
 function AnimatedValue({ value }: { value: string }) {
   const ref = useRef<HTMLParagraphElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.6 });
-  const [displayValue, setDisplayValue] = useState(value.includes("%") || value.includes("+") ? "0" : value);
+  const [displayValue, setDisplayValue] = useState(value);
 
   useEffect(() => {
     if (!isInView) {
@@ -30,7 +30,9 @@ function AnimatedValue({ value }: { value: string }) {
       return;
     }
 
-    const controls = animate(0, numeric, {
+    const start = Math.max(1, numeric - 8);
+
+    const controls = animate(start, numeric, {
       duration: 1.1,
       ease: "easeOut",
       onUpdate: (latest) => {

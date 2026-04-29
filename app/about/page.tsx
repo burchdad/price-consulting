@@ -11,7 +11,7 @@ export default function AboutPage() {
       <p className="kicker">About</p>
       <h1 className="section-title mt-3">A trusted advisory partner in federal transformation.</h1>
 
-      <div className="mt-8 grid gap-8 md:grid-cols-2">
+      <div className="mt-8 grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-5 text-sm leading-8 text-slate md:text-base">
           <p>
             Price Consulting, LLC was founded to help federal organizations turn strategic intent into accountable
@@ -28,14 +28,22 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="intel-panel p-6 shadow-panel">
-          <h2 className="text-2xl font-semibold text-white">What defines our work</h2>
-          <ul className="mt-4 space-y-4 text-sm leading-7 text-slate">
-            <li>Mission-first strategy with disciplined execution oversight.</li>
-            <li>Cross-functional advisory integrating leadership, operations, and delivery.</li>
-            <li>Transparent performance metrics and outcome-oriented decision support.</li>
-            <li>Commitment to professional excellence and long-term agency value.</li>
-          </ul>
+        <div className="intel-panel px-6 py-2 shadow-panel">
+          <h2 className="pt-4 text-sm font-semibold uppercase tracking-[0.18em] text-teal/80">Briefing Notes</h2>
+          <div className="mt-2">
+            <div className="brief-row">
+              <p className="text-sm leading-7 text-slate">Mission-first strategy with disciplined execution oversight.</p>
+            </div>
+            <div className="brief-row">
+              <p className="text-sm leading-7 text-slate">Cross-functional advisory integrating leadership, operations, and delivery.</p>
+            </div>
+            <div className="brief-row">
+              <p className="text-sm leading-7 text-slate">Transparent performance metrics and outcome-oriented decision support.</p>
+            </div>
+            <div className="py-5">
+              <p className="text-sm leading-7 text-slate">Commitment to professional excellence and long-term agency value.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
