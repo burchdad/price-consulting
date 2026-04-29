@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <section className="section-wrap py-16 md:py-24">
       <p className="kicker">About</p>
-      <h1 className="section-title mt-3">A Trusted Partner in Federal Transformation</h1>
+      <h1 className="section-title mt-3">A trusted advisory partner in federal transformation.</h1>
 
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         <div className="space-y-5 text-sm leading-8 text-slate md:text-base">
@@ -28,8 +28,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-navy/10 bg-white p-6 shadow-panel">
-          <h2 className="text-xl font-semibold text-navy">What Defines Our Work</h2>
+        <div className="intel-panel p-6 shadow-panel">
+          <h2 className="text-2xl font-semibold text-white">What defines our work</h2>
           <ul className="mt-4 space-y-4 text-sm leading-7 text-slate">
             <li>Mission-first strategy with disciplined execution oversight.</li>
             <li>Cross-functional advisory integrating leadership, operations, and delivery.</li>

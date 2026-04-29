@@ -9,18 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: "#0B1F3A",
-        slate: "#4B5563",
+        navy: "#07111F",
+        slate: "#94A3B8",
+        card: "#132238",
+        steel: "#0D1B2A",
         white: "#FFFFFF",
-        teal: "#0F766E"
+        teal: "#14B8A6"
       },
       fontFamily: {
         sans: ["var(--font-manrope)", "sans-serif"],
         serif: ["var(--font-source-serif)", "serif"]
       },
       boxShadow: {
-        panel: "0 10px 30px -15px rgba(11, 31, 58, 0.22)",
-        float: "0 4px 16px -4px rgba(11, 31, 58, 0.14), 0 20px 50px -20px rgba(11, 31, 58, 0.22)"
+        panel: "0 18px 42px -28px rgba(0, 0, 0, 0.82)",
+        float: "0 6px 18px -12px rgba(0, 0, 0, 0.8), 0 22px 44px -26px rgba(0, 0, 0, 0.75)"
       }
     }
   },

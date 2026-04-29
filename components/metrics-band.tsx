@@ -54,7 +54,7 @@ function AnimatedValue({ value }: { value: string }) {
   }, [isInView, value]);
 
   return (
-    <p ref={ref} className="font-serif text-5xl font-semibold text-navy">
+    <p ref={ref} className="font-serif text-5xl font-semibold tracking-tight text-white">
       {displayValue}
     </p>
   );
@@ -62,7 +62,7 @@ function AnimatedValue({ value }: { value: string }) {
 
 export default function MetricsBand({ items }: Props) {
   return (
-    <section className="border-y border-navy/10 bg-[#F3F6F8] py-12 md:py-16">
+    <section className="border-y border-white/10 bg-steel/70 py-12 md:py-16">
       <div className="section-wrap grid gap-6 md:grid-cols-3">
         {items.map((item, index) => (
           <motion.div
@@ -71,11 +71,11 @@ export default function MetricsBand({ items }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.35, delay: index * 0.08 }}
-            className="rounded-[1.5rem] border border-navy/10 bg-white px-6 py-7 shadow-panel"
+            className="intel-panel px-6 py-7 shadow-panel"
           >
             <AnimatedValue value={item.value} />
             <p className="mt-3 text-sm leading-6 text-slate">{item.label}</p>
-            <p className="mt-2 text-sm leading-6 text-slate/80">{item.microcopy}</p>
+            <p className="mt-2 text-sm leading-6 text-slate/85">{item.microcopy}</p>
           </motion.div>
         ))}
       </div>

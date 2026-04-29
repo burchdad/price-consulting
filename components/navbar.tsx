@@ -12,15 +12,15 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-navy/10 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/90 backdrop-blur">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-        <Link href="/" className="text-base font-semibold tracking-tight text-navy md:text-lg">
+        <Link href="/" className="text-base font-semibold uppercase tracking-[0.13em] text-white md:text-lg">
           Price Consulting, LLC
         </Link>
 
         <button
           type="button"
-          className="inline-flex rounded-md p-2 text-navy md:hidden"
+          className="inline-flex rounded-lg border border-white/15 p-2 text-white md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
@@ -28,7 +28,7 @@ export default function Navbar() {
           {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
 
-        <ul className="hidden items-center gap-7 text-sm font-medium text-slate md:flex">
+        <ul className="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[0.13em] text-slate md:flex">
           {navLinks.map((item) => {
             const active = pathname === item.href;
 
@@ -36,7 +36,7 @@ export default function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`transition-colors hover:text-teal ${active ? "text-navy" : "text-slate"}`}
+                  className={`transition-colors hover:text-teal ${active ? "text-white" : "text-slate"}`}
                 >
                   {item.label}
                 </Link>
@@ -53,7 +53,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="border-t border-navy/10 bg-white md:hidden"
+            className="border-t border-white/10 bg-navy md:hidden"
           >
             <ul className="space-y-1 px-5 py-3">
               {navLinks.map((item) => {
@@ -65,7 +65,7 @@ export default function Navbar() {
                       href={item.href}
                       onClick={() => setIsOpen(false)}
                       className={`block rounded-md px-3 py-2 text-sm ${
-                        active ? "bg-navy text-white" : "text-slate hover:bg-slate-100"
+                        active ? "bg-card text-white" : "text-slate hover:bg-card/80 hover:text-white"
                       }`}
                     >
                       {item.label}

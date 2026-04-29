@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Source_Serif_4 } from "next/font/google";
+import { Barlow_Condensed, Manrope } from "next/font/google";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import PageTransition from "@/components/page-transition";
@@ -11,8 +11,9 @@ const manrope = Manrope({
   variable: "--font-manrope"
 });
 
-const sourceSerif = Source_Serif_4({
+const sourceSerif = Barlow_Condensed({
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   variable: "--font-source-serif"
 });
 

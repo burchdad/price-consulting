@@ -39,13 +39,13 @@ export default function ServicesPage() {
   return (
     <section className="section-wrap py-16 md:py-24">
       <p className="kicker">Services</p>
-      <h1 className="section-title mt-3">Federal Consulting Services Built for Real-World Delivery</h1>
+      <h1 className="section-title mt-3">Federal advisory services built for real-world mission delivery.</h1>
 
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         {services.map((service) => (
-          <article key={service.title} className="rounded-2xl border border-navy/10 bg-white p-6 shadow-panel">
+          <article key={service.title} className="intel-panel p-6 shadow-panel">
             <service.icon className="h-7 w-7 text-teal" />
-            <h2 className="mt-4 text-xl font-semibold text-navy">{service.title}</h2>
+            <h2 className="mt-4 text-2xl font-semibold text-white">{service.title}</h2>
             <p className="mt-3 text-sm leading-7 text-slate">{service.body}</p>
           </article>
         ))}

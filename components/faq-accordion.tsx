@@ -22,13 +22,13 @@ export default function FaqAccordion({ items }: Props) {
         const isOpen = activeIndex === index;
 
         return (
-          <div key={item.question} className="overflow-hidden rounded-xl border border-navy/10 bg-white">
+          <div key={item.question} className="overflow-hidden rounded-xl border border-white/10 bg-card/80 backdrop-blur-sm">
             <button
               type="button"
               className="flex w-full items-center justify-between px-5 py-4 text-left"
               onClick={() => setActiveIndex(isOpen ? null : index)}
             >
-              <span className="text-sm font-semibold text-navy md:text-base">{item.question}</span>
+              <span className="text-sm font-semibold text-white md:text-base">{item.question}</span>
               <ChevronDown className={`h-5 w-5 text-slate transition-transform ${isOpen ? "rotate-180" : ""}`} />
             </button>
 

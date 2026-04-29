@@ -51,7 +51,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl border border-navy/10 bg-white p-6 shadow-panel">
+    <form onSubmit={handleSubmit} className="rounded-xl border border-white/10 bg-card/80 p-6 shadow-panel backdrop-blur-sm">
       <div className="grid gap-4 md:grid-cols-2">
         <label className="text-sm text-slate">
           Full Name
@@ -59,7 +59,7 @@ export default function ContactForm() {
             name="name"
             required
             type="text"
-            className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-navy outline-none ring-teal/30 transition focus:ring"
+            className="mt-1 w-full rounded-lg border border-white/15 bg-navy/40 px-3 py-2 text-sm text-white outline-none ring-teal/30 transition focus:ring"
           />
         </label>
 
@@ -69,7 +69,7 @@ export default function ContactForm() {
             name="email"
             required
             type="email"
-            className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-navy outline-none ring-teal/30 transition focus:ring"
+            className="mt-1 w-full rounded-lg border border-white/15 bg-navy/40 px-3 py-2 text-sm text-white outline-none ring-teal/30 transition focus:ring"
           />
         </label>
 
@@ -78,7 +78,7 @@ export default function ContactForm() {
           <input
             name="organization"
             type="text"
-            className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-navy outline-none ring-teal/30 transition focus:ring"
+            className="mt-1 w-full rounded-lg border border-white/15 bg-navy/40 px-3 py-2 text-sm text-white outline-none ring-teal/30 transition focus:ring"
           />
         </label>
 
@@ -86,7 +86,7 @@ export default function ContactForm() {
           Service Interest
           <select
             name="serviceInterest"
-            className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-navy outline-none ring-teal/30 transition focus:ring"
+            className="mt-1 w-full rounded-lg border border-white/15 bg-navy/40 px-3 py-2 text-sm text-white outline-none ring-teal/30 transition focus:ring"
           >
             <option>Strategic Advisory</option>
             <option>Program Modernization</option>
@@ -103,7 +103,7 @@ export default function ContactForm() {
           name="consultationGoals"
           required
           rows={5}
-          className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-navy outline-none ring-teal/30 transition focus:ring"
+          className="mt-1 w-full rounded-lg border border-white/15 bg-navy/40 px-3 py-2 text-sm text-white outline-none ring-teal/30 transition focus:ring"
           placeholder="Describe your agency challenge, timeline, and desired outcomes."
         />
       </label>
@@ -113,19 +113,19 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-5 rounded-lg bg-navy px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#102a50]"
+        className="mt-5 rounded-lg bg-teal px-5 py-3 text-sm font-semibold text-[#031316] transition hover:bg-[#11a899]"
       >
-        {isSubmitting ? "Submitting..." : "Request Consultation"}
+        {isSubmitting ? "Submitting..." : "Request Strategic Briefing"}
       </button>
 
       {isSubmitted ? (
-        <p className="mt-4 rounded-lg border border-teal/30 bg-teal/10 px-4 py-3 text-sm text-teal">
+        <p className="mt-4 rounded-lg border border-teal/35 bg-teal/10 px-4 py-3 text-sm text-teal">
           Thank you. A member of our advisory team will respond within one business day.
         </p>
       ) : null}
 
       {errorMessage ? (
-        <p className="mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{errorMessage}</p>
+        <p className="mt-4 rounded-lg border border-red-400/35 bg-red-500/10 px-4 py-3 text-sm text-red-200">{errorMessage}</p>
       ) : null}
     </form>
   );
