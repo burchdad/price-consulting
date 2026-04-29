@@ -28,6 +28,18 @@ body {
     var(--surface);
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(11, 31, 58, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 31, 58, 0.03) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at center, black 20%, transparent 85%);
+  opacity: 0.35;
+}
+
 .section-wrap {
   @apply mx-auto w-full max-w-6xl px-5 md:px-8;
 }
@@ -38,4 +50,10 @@ body {
 
 .kicker {
   @apply text-xs font-semibold uppercase tracking-[0.2em] text-teal;
+}
+
+.hero-grid {
+  background:
+    radial-gradient(700px 360px at 85% 20%, rgba(15, 118, 110, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.92));
 }
