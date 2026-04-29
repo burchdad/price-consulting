@@ -25,6 +25,22 @@ export default function Footer() {
               Strategic federal consulting for agencies and mission partners pursuing measurable public outcomes with
               executive-level rigor.
             </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a
+                href={company.capabilitiesStatementUrl}
+                className="inline-flex items-center rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+              >
+                Capabilities Statement
+              </a>
+              <a
+                href={company.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
 
           <div>
@@ -56,7 +72,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-slate-300">
               <li>Privacy Policy</li>
               <li>Terms of Use</li>
-              <li>Capabilities Statement Available Upon Request</li>
+              <li>SAM and capability materials available upon request</li>
             </ul>
           </div>
         </div>

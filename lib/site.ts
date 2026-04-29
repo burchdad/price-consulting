@@ -2,6 +2,8 @@ export const company = {
   name: "Price Consulting, LLC",
   shortName: "Price Consulting",
   url: "https://www.priceconsultingllc.com",
+  linkedin: "https://www.linkedin.com/company/price-consulting-llc",
+  capabilitiesStatementUrl: "#",
   phone: "(202) 555-0124",
   email: "contact@priceconsultingllc.com",
   address: {

@@ -5,14 +5,18 @@ import {
   BriefcaseBusiness,
   Building2,
   ChartNoAxesColumn,
+  ClipboardCheck,
   FileDown,
   Landmark,
+  LockKeyhole,
+  Network,
   ShieldCheck,
   Target,
   Users
 } from "lucide-react";
 import Link from "next/link";
 import MetricsBand from "@/components/metrics-band";
+import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -60,9 +64,44 @@ const engagementModels = [
 ];
 
 const metrics = [
-  { label: "Agency Initiatives Supported", value: "50+" },
-  { label: "Average Delivery Acceleration", value: "32%" },
-  { label: "Stakeholder Satisfaction", value: "96%" }
+  {
+    label: "Agency Initiatives Supported",
+    value: "50+",
+    microcopy: "Advisory support delivered across transformation, governance, and program execution efforts."
+  },
+  {
+    label: "Average Delivery Acceleration",
+    value: "32%",
+    microcopy: "Representative improvement in delivery speed after prioritization, cadence, and reporting discipline."
+  },
+  {
+    label: "Stakeholder Satisfaction",
+    value: "96%",
+    microcopy: "Strong executive confidence built through clarity, responsiveness, and measurable progress."
+  }
+];
+
+const trustCards = [
+  {
+    title: "Federal Context",
+    detail: "Built for public-sector decision cycles, stakeholder scrutiny, and mission accountability.",
+    icon: Building2
+  },
+  {
+    title: "Secure Delivery Mindset",
+    detail: "Structured for discretion, governance, and confidence in executive-facing engagements.",
+    icon: LockKeyhole
+  },
+  {
+    title: "Acquisition Alignment",
+    detail: "Support models shaped to work alongside procurement constraints and partner ecosystems.",
+    icon: ClipboardCheck
+  },
+  {
+    title: "Cross-Functional Coordination",
+    detail: "Connects leadership, program, and delivery stakeholders around one execution narrative.",
+    icon: Network
+  }
 ];
 
 const supportGroups = [
@@ -183,12 +222,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-navy/10 bg-white/80">
-        <div className="section-wrap flex flex-wrap items-center gap-5 py-6 text-xs font-semibold uppercase tracking-[0.14em] text-slate md:justify-between">
-          <span>Trusted by Federal Program Offices</span>
-          <span>Security-Conscious Delivery</span>
-          <span>Acquisition-Aligned Advisory</span>
-          <span>Outcome-Driven Engagements</span>
+      <section className="border-y border-navy/10 bg-white/80 py-10 md:py-12">
+        <div className="section-wrap">
+          <p className="kicker">Trusted Engagement Design</p>
+          <div className="mt-5 grid gap-4 md:grid-cols-4">
+            {trustCards.map((card) => (
+              <div key={card.title} className="rounded-[1.5rem] border border-navy/10 bg-white px-5 py-5 shadow-panel">
+                <div className="inline-flex rounded-xl bg-teal/10 p-3 text-teal">
+                  <card.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-navy">{card.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate">{card.detail}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -241,10 +288,14 @@ export default function HomePage() {
         <div className="section-wrap grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div>
             <p className="kicker">Meet the Principal</p>
-            <h2 className="section-title mt-3">Senior advisory leadership shaped by federal execution realities.</h2>
+            <h2 className="section-title mt-3">Meet James Price</h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-slate">
-              Price Consulting is led by a principal advisor with deep experience supporting executive stakeholders,
-              modernization efforts, and performance-driven delivery in federal environments where clarity and trust matter.
+              James Price leads Price Consulting with an executive advisory approach shaped by federal delivery realities,
+              stakeholder complexity, and the need to turn mission priorities into disciplined execution.
+            </p>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-slate">
+              His work centers on modernization support, governance design, executive communications, and performance
+              management for leaders who need trusted counsel without unnecessary noise.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-navy/10 bg-white p-4">
@@ -263,7 +314,12 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-[0.75fr_1.25fr]">
-            <div className="min-h-[320px] rounded-[2rem] border border-navy/10 bg-gradient-to-br from-[#DCE7EE] to-[#BCCDD9]" />
+            <div className="flex min-h-[320px] items-end rounded-[2rem] border border-navy/10 bg-gradient-to-br from-[#DCE7EE] to-[#BCCDD9] p-6">
+              <div className="rounded-2xl bg-white/80 px-4 py-3 backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate">Headshot Placeholder</p>
+                <p className="mt-2 text-sm font-semibold text-navy">James Price</p>
+              </div>
+            </div>
             <div className="rounded-[2rem] border border-navy/10 bg-white p-7 shadow-panel">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate">Credentials and perspective</p>
               <p className="mt-4 text-sm leading-7 text-slate">
@@ -277,6 +333,25 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section-wrap py-10 md:py-12">
+        <div className="rounded-[2rem] border border-navy/10 bg-gradient-to-r from-[#F5F9FA] via-white to-[#EEF5F6] px-8 py-8 shadow-panel md:flex md:items-center md:justify-between md:px-10">
+          <div>
+            <p className="kicker">Consultation Access</p>
+            <h2 className="mt-3 font-serif text-3xl font-semibold text-navy">Need a focused briefing on an active initiative?</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate">
+              We provide concise, executive-ready consultation for agencies and partners preparing for transformation,
+              acquisition, or program delivery decisions.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center rounded-full bg-navy px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#102a50] md:mt-0"
+          >
+            Book a Consultation
+          </Link>
         </div>
       </section>
 
@@ -333,7 +408,7 @@ export default function HomePage() {
               A clean, executive-ready summary designed for contracting officers, program leaders, and teaming partners.
             </p>
             <a
-              href="#"
+              href={company.capabilitiesStatementUrl}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-navy transition hover:bg-slate-100"
             >
               <FileDown size={16} />
