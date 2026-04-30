@@ -11,24 +11,28 @@ const capabilityDomains = [
   {
     title: "Mission Strategy and Portfolio Governance",
     body: "Strategic planning, prioritization models, and governance mechanisms for mission portfolios requiring executive confidence and traceability.",
+    impact: "Prevent the misalignment that stalls programs and erodes stakeholder trust before delivery even begins.",
     scope: "Strategy roadmaps, governance charters, decision memos",
     icon: Building2
   },
   {
     title: "Program Modernization and Delivery Assurance",
     body: "Modernization sequencing, dependency control, and operational risk management designed for complex enterprise environments.",
+    impact: "Cut schedule variance, close delivery gaps, and restore execution credibility on programs under scrutiny.",
     scope: "Transformation sequencing, milestone controls, dependency triage",
     icon: Waypoints
   },
   {
     title: "Acquisition Integration and PMO Support",
     body: "Acquisition lifecycle support aligned with mission execution needs, from requirements definition through transition planning.",
+    impact: "Reduce procurement delays, strengthen awardability, and improve execution outcomes before money is obligated.",
     scope: "Requirements support, solicitation alignment, PMO operations",
     icon: BriefcaseBusiness
   },
   {
     title: "Compliance-Informed Mission Support",
     body: "Execution support informed by federal security and compliance expectations across cross-functional delivery teams.",
+    impact: "Harden program delivery against audit exposure and ensure execution discipline across all contract layers.",
     scope: "Framework mapping, operational controls, executive reporting",
     icon: ShieldCheck
   }
@@ -68,7 +72,11 @@ export default function ServicesPage() {
             </div>
             <h2 className="mt-4 text-xl font-semibold text-white">{domain.title}</h2>
             <p className="mt-3 text-sm leading-7 text-slate">{domain.body}</p>
-            <p className="mt-4 border-t border-white/10 pt-4 text-xs uppercase tracking-[0.16em] text-slate">
+            <div className="mt-4 border-t border-white/10 pt-4">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-teal/70">Why It Matters</p>
+              <p className="mt-2 text-xs leading-6 text-slate/80">{domain.impact}</p>
+            </div>
+            <p className="mt-4 text-xs uppercase tracking-[0.16em] text-slate">
               Typical Scope: {domain.scope}
             </p>
           </article>

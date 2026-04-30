@@ -36,7 +36,9 @@ export default function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`transition-colors hover:text-teal ${active ? "text-white" : "text-slate"}`}
+                  className={`relative transition-colors after:absolute after:bottom-[-2px] after:left-0 after:h-px after:bg-teal after:transition-[width] after:duration-200 hover:text-teal ${
+                    active ? "text-white after:w-full" : "text-slate after:w-0 hover:after:w-full"
+                  }`}
                 >
                   {item.label}
                 </Link>

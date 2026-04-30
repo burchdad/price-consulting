@@ -83,26 +83,33 @@ export default function Footer() {
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal/80">Operational Trust Profile</p>
           <div className="mt-5 grid gap-6 md:grid-cols-3">
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Headquarters / Region</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Business Registration</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                <li>Entity Type: Limited Liability Company (LLC)</li>
+                <li>Classification: Small Business</li>
+                <li>SAM.gov: Active — UEI available upon request</li>
+                <li>CAGE Code: Available upon request</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">NAICS Codes</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                <li>541611 — Management Consulting Services</li>
+                <li>541512 — Computer Systems Design Services</li>
+                <li>541519 — Other IT Value Added Services</li>
+                <li>541690 — Scientific and Technical Consulting</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Confidentiality</h3>
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                Washington, DC Metro Region
-                <br />
-                HQ: {company.address.streetAddress}, {company.address.addressLocality}, {company.address.addressRegion}
+                Sensitive inquiries are handled with full professional confidentiality. A mutual NDA is available upon
+                request prior to any capability or scope discussion.
               </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Certifications</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                <li>Small business certification details available upon request</li>
-                <li>Security and compliance competency alignment maintained</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Registration / Classification</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                <li>SAM registration: Active status documentation placeholder</li>
-                <li>Set-Aside / Classification: Placeholder for NAICS and socioeconomic details</li>
-              </ul>
+              <p className="mt-3 text-xs leading-6 text-slate-400">
+                Capability statement, past performance documentation, and team credentials available under
+                NDA or formal procurement action.
+              </p>
             </div>
           </div>
         </div>

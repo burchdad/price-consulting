@@ -65,11 +65,20 @@ body::before {
 }
 
 .intel-panel {
-  @apply rounded-md border border-white/10 bg-[rgba(13,27,42,0.88)];
+  @apply rounded-md border border-white/10 bg-[rgba(13,27,42,0.88)] transition-[border-color,box-shadow] duration-200;
+}
+
+.intel-panel:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.06);
 }
 
 .brief-row {
-  @apply border-b border-white/10 py-5;
+  @apply border-b border-white/10 py-5 transition-colors duration-150;
+}
+
+.brief-row:hover {
+  background-color: rgba(255, 255, 255, 0.018);
 }
 
 .cta-primary {
@@ -79,3 +88,23 @@ body::before {
 .cta-secondary {
   @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:border-teal hover:text-teal;
 }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.48s ease-out both;
+}
+
+.fade-up-d1 { animation-delay: 0.08s; }
+.fade-up-d2 { animation-delay: 0.16s; }
+.fade-up-d3 { animation-delay: 0.24s; }
+.fade-up-d4 { animation-delay: 0.32s; }

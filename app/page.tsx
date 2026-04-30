@@ -27,6 +27,8 @@ const capabilityMatrix = [
     domain: "Advisory Domain 01",
     description:
       "Executive-level strategy alignment, governance cadence design, and portfolio decision support for high-visibility programs.",
+    impact:
+      "Reduce strategic drift, sharpen decision traceability, and sustain leadership confidence across competing program priorities.",
     icon: Landmark
   },
   {
@@ -34,6 +36,8 @@ const capabilityMatrix = [
     domain: "Advisory Domain 02",
     description:
       "Transformation sequencing, dependency management, and delivery risk controls for enterprise modernization portfolios.",
+    impact:
+      "Compress delivery timelines, cut schedule variance, and give stakeholders a credible and defensible modernization posture.",
     icon: Waypoints
   },
   {
@@ -41,6 +45,8 @@ const capabilityMatrix = [
     domain: "Advisory Domain 03",
     description:
       "Acquisition alignment, PMO operating structure, and mission partner integration across prime and government teams.",
+    impact:
+      "Reduce procurement delays, strengthen awardability, and improve downstream execution outcomes before money is obligated.",
     icon: BriefcaseBusiness
   },
   {
@@ -48,7 +54,37 @@ const capabilityMatrix = [
     domain: "Advisory Domain 04",
     description:
       "Compliance-informed execution support aligned to federal security frameworks and audit-ready operating practices.",
+    impact:
+      "Harden delivery posture against compliance failures and enable controlled, audit-ready program execution under scrutiny.",
     icon: ShieldCheck
+  }
+];
+
+const missionEnvironments = [
+  {
+    label: "Enterprise Cloud Modernization",
+    detail:
+      "Migration, platform transformation, and delivery governance for large-scale cloud programs across civilian and defense environments."
+  },
+  {
+    label: "Classified / Sensitive IT Programs",
+    detail:
+      "Operational support within high-scrutiny, access-controlled technology environments requiring strict delivery discipline."
+  },
+  {
+    label: "Large-Scale Acquisition Programs",
+    detail:
+      "Advisory support spanning pre-solicitation planning, source selection readiness, and post-award transition across major contract vehicles."
+  },
+  {
+    label: "Multi-Vendor Contract Environments",
+    detail:
+      "Governance and integration oversight for complex IDIQ, GWAC, and multi-prime program structures with competing delivery incentives."
+  },
+  {
+    label: "Compliance-Driven Security Programs",
+    detail:
+      "Delivery and governance support for programs operating under FISMA, CMMC, FedRAMP, or NIST 800-series mandates."
   }
 ];
 
@@ -207,6 +243,10 @@ export default function HomePage() {
               </div>
               <h3 className="mt-5 text-xl font-semibold text-white">{capability.title}</h3>
               <p className="mt-3 text-sm leading-7 text-slate">{capability.description}</p>
+              <div className="mt-5 border-t border-white/10 pt-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-teal/70">Why It Matters</p>
+                <p className="mt-2 text-xs leading-6 text-slate/80">{capability.impact}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -214,8 +254,25 @@ export default function HomePage() {
 
       <section className="border-y intel-divider bg-steel/70 py-20 md:py-24">
         <div className="section-wrap">
+          <p className="kicker">Representative Mission Environments</p>
+          <h2 className="section-title mt-3">Operational contexts where this advisory work is delivered.</h2>
+          <div className="mt-10 intel-panel px-7">
+            {missionEnvironments.map((env) => (
+              <article key={env.label} className="brief-row last:border-b-0">
+                <div className="grid gap-2 md:grid-cols-[300px_1fr] md:gap-8 md:items-center">
+                  <h3 className="font-semibold text-white">{env.label}</h3>
+                  <p className="text-sm leading-7 text-slate">{env.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y intel-divider bg-steel/70 py-20 md:py-24">
+        <div className="section-wrap">
           <p className="kicker">Engagement Profiles</p>
-          <h2 className="section-title mt-3">Representative dossier structures for advisory delivery models.</h2>
+          <h2 className="section-title mt-3">Representative delivery model dossiers for advisory engagements.</h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {engagementProfiles.map((profile) => (
               <article key={profile.title} className="intel-panel p-6">
