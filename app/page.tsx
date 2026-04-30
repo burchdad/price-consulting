@@ -246,8 +246,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y intel-divider bg-steel/70 py-20 md:py-24">
-        <div className="section-wrap">
+      <section className="border-y intel-divider relative overflow-hidden py-20 md:py-24">
+        {/* Ambient video backdrop */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top"
+          style={{ filter: "blur(4px) saturate(0.7)", transform: "scale(1.06)" }}
+        >
+          <source src="/ops-environment.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay */}
+        <div className="pointer-events-none absolute inset-0" style={{ background: "rgba(4,11,20,0.78)" }} />
+        <div className="section-wrap relative">
           <Reveal>
             <p className="kicker"><span className="tac-index">[02]</span>Representative Mission Environments</p>
             <h2 className="section-title mt-3">Operational contexts where this advisory work is delivered.</h2>
