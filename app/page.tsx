@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import CaseBriefsPanel from "@/components/case-briefs-panel";
 import {
   ArrowRight,
   Building2,
@@ -191,28 +192,8 @@ export default function HomePage() {
                 <Link href="/contact" className="cta-primary">
                   Request Strategic Briefing
                   <ArrowRight size={16} />
-                </Link>
-                <a href={company.capabilitiesStatementUrl} className="cta-secondary">
-                  <FileDown size={16} />
-                  Access Capability Brief
-                </a>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <HeroIntelPanel />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="border-b intel-divider py-12">
-        <div className="section-wrap">
-          <Reveal>
-            <p className="kicker">Operating Advantages</p>
-          </Reveal>
-          <Reveal delay={0.1} className="mt-6 intel-panel px-6">
             {trustRows.map((row, index) => (
+              const frameworkBadges
               <div key={row} className={index === trustRows.length - 1 ? "py-5" : "brief-row"}>
                 <p className="text-sm leading-7 text-slate">{row}</p>
               </div>
@@ -338,22 +319,8 @@ export default function HomePage() {
             <p className="kicker"><span className="tac-index">[04]</span>Representative Outcomes</p>
             <h2 className="section-title mt-3">Operational case briefs with measurable mission results.</h2>
           </Reveal>
-          <Reveal delay={0.1} className="mt-10 intel-panel px-7">
-            {caseBriefs.map((brief) => (
-              <article key={brief.title} className="brief-row last:border-b-0">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">Anonymized Case Brief</p>
-                <h3 className="mt-3 text-lg font-semibold text-white">{brief.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate">
-                  <span className="font-semibold text-white">Mission Context:</span> {brief.mission}
-                </p>
-                <p className="mt-2 text-sm leading-7 text-slate">
-                  <span className="font-semibold text-white">Advisory Actions:</span> {brief.actions}
-                </p>
-                <p className="mt-2 text-sm leading-7 text-teal/90">
-                  <span className="font-semibold text-white">Measured Result:</span> {brief.result}
-                </p>
-              </article>
-            ))}
+          <Reveal delay={0.1}>
+            <CaseBriefsPanel />
           </Reveal>
         </div>
       </section>
