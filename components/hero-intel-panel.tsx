@@ -35,12 +35,19 @@ export default function HeroIntelPanel() {
   const count = useCountUp(15, 1800);
 
   return (
-    <div className="intel-panel relative overflow-hidden p-8 md:p-10">
+    <div className="intel-panel group relative overflow-hidden p-8 md:min-h-[430px] md:p-10">
       {/* Ambient gradient backdrop */}
-      <div className="pointer-events-none absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_10%_20%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_82%_75%,rgba(248,250,252,0.05),transparent_26%)]" />
+      <div className="pointer-events-none absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_10%_20%,rgba(20,184,166,0.2),transparent_30%),radial-gradient(circle_at_82%_75%,rgba(248,250,252,0.05),transparent_26%)]" />
+
+      {/* Hover-responsive lighting shift */}
+      <div className="pointer-events-none absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_78%_16%,rgba(20,184,166,0.22),transparent_40%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       {/* Fine grid overlay */}
-      <div className="pointer-events-none absolute inset-0 rounded-xl bg-[linear-gradient(rgba(148,163,184,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.04)_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <motion.div
+        className="pointer-events-none absolute inset-0 rounded-xl bg-[linear-gradient(rgba(148,163,184,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.04)_1px,transparent_1px)] bg-[size:24px_24px]"
+        animate={{ backgroundPosition: ["0px 0px, 0px 0px", "22px 10px, 10px 22px"] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "linear", repeatType: "reverse" }}
+      />
 
       {/* Scanning line */}
       <motion.div
@@ -55,7 +62,7 @@ export default function HeroIntelPanel() {
         <span className="relative flex h-1.5 w-1.5">
           <span
             className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-60"
-            style={{ animationDuration: "2.6s" }}
+            style={{ animationDuration: "2s" }}
           />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal/80" />
         </span>
@@ -68,7 +75,7 @@ export default function HeroIntelPanel() {
 
       <div className="relative">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal/80">Operational Snapshot</p>
-        <h2 className="mt-6 font-serif text-4xl font-semibold uppercase leading-[1] tracking-[0.03em] text-white md:text-5xl">
+        <h2 className="mt-6 max-w-xl font-serif text-4xl font-semibold uppercase leading-[1] tracking-[0.03em] text-white md:text-5xl">
           Executive support built for sensitive environments.
         </h2>
         <p className="mt-5 text-sm leading-7 text-slate">

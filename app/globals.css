@@ -86,7 +86,47 @@ body::after {
 .hero-grid {
   background:
     radial-gradient(760px 410px at 84% 12%, rgba(20, 184, 166, 0.12), transparent 62%),
+    radial-gradient(900px 520px at 45% 0%, rgba(248, 250, 252, 0.04), transparent 68%),
     linear-gradient(180deg, rgba(13, 27, 42, 0.72), rgba(7, 17, 31, 0.94));
+}
+
+.hero-vignette-drift {
+  background:
+    radial-gradient(ellipse 58% 42% at 22% 18%, rgba(20, 184, 166, 0.09), transparent 72%),
+    radial-gradient(ellipse 52% 38% at 78% 66%, rgba(10, 28, 44, 0.52), transparent 78%),
+    radial-gradient(ellipse 88% 70% at 50% 58%, rgba(1, 7, 13, 0.42), transparent 76%);
+  animation: heroAtmosDrift 22s ease-in-out infinite alternate;
+}
+
+.hero-noise-parallax {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.18) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+  mask-image: radial-gradient(circle at 50% 40%, black 15%, transparent 85%);
+  animation: heroNoiseFloat 30s linear infinite;
+}
+
+@keyframes heroAtmosDrift {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 0.72;
+  }
+  50% {
+    transform: translateX(2.5%) translateY(-1.4%) scale(1.025);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(-1.5%) translateY(1.6%) scale(0.99);
+    opacity: 0.75;
+  }
+}
+
+@keyframes heroNoiseFloat {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-20px, -14px, 0);
+  }
 }
 
 .intel-divider {
@@ -129,11 +169,11 @@ body::after {
 }
 
 .cta-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-md bg-teal px-6 py-3 text-sm font-semibold text-[#031316] transition hover:bg-[#11a899];
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-teal px-7 py-3.5 text-sm font-semibold text-[#031316] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#11a899] hover:shadow-[0_0_0_1px_rgba(20,184,166,0.2),0_8px_24px_-10px_rgba(20,184,166,0.6)];
 }
 
 .cta-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:border-teal hover:text-teal;
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-[rgba(3,12,20,0.45)] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-teal/80 hover:text-teal hover:shadow-[0_0_0_1px_rgba(20,184,166,0.16),0_8px_22px_-12px_rgba(20,184,166,0.4)];
 }
 
 @keyframes fade-up {

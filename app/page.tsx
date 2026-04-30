@@ -147,27 +147,6 @@ const supportedClientTypes = [
   "GovCon Firms"
 ];
 
-const caseBriefs = [
-  {
-    title: "Portfolio Stabilization Case Brief",
-    mission: "Civilian mission support portfolio facing schedule slippage and fragmented reporting.",
-    actions: "Established executive governance rhythm, re-baselined interdependent workstreams, and standardized decision briefing formats.",
-    result: "Restored portfolio predictability with a 29% reduction in milestone variance within two quarters."
-  },
-  {
-    title: "Modernization Tempo Recovery",
-    mission: "Enterprise modernization program delayed by cross-team dependency bottlenecks.",
-    actions: "Introduced phased sequencing model, risk triage checkpoints, and integrated program management controls.",
-    result: "Improved delivery velocity by 34% while increasing leadership confidence in release commitments."
-  },
-  {
-    title: "Acquisition Readiness Brief",
-    mission: "Acquisition team required stronger requirements clarity prior to solicitation release.",
-    actions: "Facilitated requirements alignment sessions, created executive-ready evaluation artifacts, and mapped decision criteria.",
-    result: "Reduced pre-award clarification churn by 41% and accelerated solicitation readiness timeline."
-  }
-];
-
 const frameworkBadges = ["FAR / DFARS", "FedRAMP", "CMMC", "NIST 800-53 / 800-171", "Enterprise IT Programs"];
 
 export default function HomePage() {
@@ -176,24 +155,51 @@ export default function HomePage() {
       <section className="hero-grid relative overflow-hidden border-b intel-divider">
         {/* Fine hero grid overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.06)_1px,transparent_1px)] bg-[size:44px_44px] opacity-30" />
-        <div className="section-wrap relative grid gap-12 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
+        {/* Atmospheric depth layers */}
+        <div className="hero-vignette-drift pointer-events-none absolute inset-0" />
+        <div className="hero-noise-parallax pointer-events-none absolute inset-0 opacity-20" />
+        <div className="section-wrap relative grid gap-10 py-20 md:grid-cols-[1.02fr_0.98fr] md:items-center md:py-28">
           <Reveal>
             <div>
               <p className="kicker">Strategic Advisory for High-Consequence Operations</p>
-              <h1 className="mt-5 max-w-4xl font-serif text-5xl font-semibold uppercase leading-[0.98] tracking-[0.02em] text-white md:text-8xl">
-                Mission-critical counsel for leaders operating under pressure.
+              <h1 className="mt-5 max-w-3xl font-serif text-5xl font-semibold uppercase leading-[0.96] tracking-[0.02em] text-white md:text-7xl">
+                <span className="block">Mission-Critical Counsel</span>
+                <span className="block">For Leaders Operating</span>
+                <span className="block">Under Pressure</span>
               </h1>
               <p className="mt-7 max-w-2xl text-base leading-8 text-slate md:text-lg">
-                Price Consulting, LLC helps agencies, primes, and mission partners execute modernization and acquisition
-                priorities with disciplined governance and executive-ready clarity.
+                Price Consulting advises federal leaders and mission partners on modernization, acquisition, and
+                execution priorities where operational clarity and disciplined governance are non-negotiable.
               </p>
 
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link href="/contact" className="cta-primary">
                   Request Strategic Briefing
                   <ArrowRight size={16} />
+                </Link>
+                <a href={company.capabilitiesStatementUrl} className="cta-secondary">
+                  <FileDown size={16} />
+                  Access Capability Brief
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15} className="md:pl-2">
+            <div className="md:scale-[1.02]">
+              <HeroIntelPanel />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b intel-divider py-12">
+        <div className="section-wrap">
+          <Reveal>
+            <p className="kicker">Operating Advantages</p>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-6 intel-panel px-6">
             {trustRows.map((row, index) => (
-              const frameworkBadges
               <div key={row} className={index === trustRows.length - 1 ? "py-5" : "brief-row"}>
                 <p className="text-sm leading-7 text-slate">{row}</p>
               </div>
