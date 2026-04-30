@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import MetricsBand from "@/components/metrics-band";
+import HeroIntelPanel from "@/components/hero-intel-panel";
+import Reveal from "@/components/reveal";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -171,69 +173,61 @@ export default function HomePage() {
   return (
     <>
       <section className="hero-grid relative overflow-hidden border-b intel-divider">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:44px_44px] opacity-25" />
+        {/* Fine hero grid overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.06)_1px,transparent_1px)] bg-[size:44px_44px] opacity-30" />
         <div className="section-wrap relative grid gap-12 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
-          <div>
-            <p className="kicker">Strategic Advisory for High-Consequence Operations</p>
-            <h1 className="mt-5 max-w-4xl font-serif text-5xl font-semibold uppercase leading-[0.98] tracking-[0.02em] text-white md:text-8xl">
-              Mission-critical counsel for leaders operating under pressure.
-            </h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-slate md:text-lg">
-              Price Consulting, LLC helps agencies, primes, and mission partners execute modernization and acquisition
-              priorities with disciplined governance and executive-ready clarity.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="cta-primary">
-                Request Strategic Briefing
-                <ArrowRight size={16} />
-              </Link>
-              <a href={company.capabilitiesStatementUrl} className="cta-secondary">
-                <FileDown size={16} />
-                Access Capability Brief
-              </a>
-            </div>
-          </div>
-
-          <div className="intel-panel relative p-8 md:p-10">
-            <div className="absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_10%_20%,rgba(20,184,166,0.2),transparent_30%),radial-gradient(circle_at_82%_75%,rgba(248,250,252,0.08),transparent_26%)]" />
-            <div className="relative">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal/80">Operational Snapshot</p>
-              <h2 className="mt-6 font-serif text-4xl font-semibold uppercase leading-[1] tracking-[0.03em] text-white md:text-5xl">
-                Executive support built for sensitive environments.
-              </h2>
-              <p className="mt-5 text-sm leading-7 text-slate">
-                Advisory coverage spanning strategy, modernization controls, and stakeholder-aligned execution rhythm.
+          <Reveal>
+            <div>
+              <p className="kicker">Strategic Advisory for High-Consequence Operations</p>
+              <h1 className="mt-5 max-w-4xl font-serif text-5xl font-semibold uppercase leading-[0.98] tracking-[0.02em] text-white md:text-8xl">
+                Mission-critical counsel for leaders operating under pressure.
+              </h1>
+              <p className="mt-7 max-w-2xl text-base leading-8 text-slate md:text-lg">
+                Price Consulting, LLC helps agencies, primes, and mission partners execute modernization and acquisition
+                priorities with disciplined governance and executive-ready clarity.
               </p>
-              <div className="mt-8 grid gap-4">
-                <div className="rounded-md border border-white/10 bg-navy/55 p-4">
-                  <p className="text-3xl font-semibold text-white">15+ yrs</p>
-                  <p className="mt-2 text-sm text-slate">Supporting federal mission leaders and delivery stakeholders.</p>
-                </div>
+
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Link href="/contact" className="cta-primary">
+                  Request Strategic Briefing
+                  <ArrowRight size={16} />
+                </Link>
+                <a href={company.capabilitiesStatementUrl} className="cta-secondary">
+                  <FileDown size={16} />
+                  Access Capability Brief
+                </a>
               </div>
             </div>
-          </div>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <HeroIntelPanel />
+          </Reveal>
         </div>
       </section>
 
       <section className="border-b intel-divider py-12">
         <div className="section-wrap">
-          <p className="kicker">Operating Advantages</p>
-          <div className="mt-6 intel-panel px-6">
+          <Reveal>
+            <p className="kicker">Operating Advantages</p>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-6 intel-panel px-6">
             {trustRows.map((row, index) => (
               <div key={row} className={index === trustRows.length - 1 ? "py-5" : "brief-row"}>
                 <p className="text-sm leading-7 text-slate">{row}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <MetricsBand items={metrics} />
 
       <section className="section-wrap py-20 md:py-24">
-        <p className="kicker">Advisory Capability Matrix</p>
-        <h2 className="section-title mt-3">Operational domains built for mission execution under federal scrutiny.</h2>
+        <Reveal>
+          <p className="kicker"><span className="tac-index">[01]</span>Advisory Capability Matrix</p>
+          <h2 className="section-title mt-3">Operational domains built for mission execution under federal scrutiny.</h2>
+        </Reveal>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {capabilityMatrix.map((capability) => (
             <article key={capability.title} className="intel-panel p-6 md:p-7">
@@ -254,9 +248,11 @@ export default function HomePage() {
 
       <section className="border-y intel-divider bg-steel/70 py-20 md:py-24">
         <div className="section-wrap">
-          <p className="kicker">Representative Mission Environments</p>
-          <h2 className="section-title mt-3">Operational contexts where this advisory work is delivered.</h2>
-          <div className="mt-10 intel-panel px-7">
+          <Reveal>
+            <p className="kicker"><span className="tac-index">[02]</span>Representative Mission Environments</p>
+            <h2 className="section-title mt-3">Operational contexts where this advisory work is delivered.</h2>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-10 intel-panel px-7">
             {missionEnvironments.map((env) => (
               <article key={env.label} className="brief-row last:border-b-0">
                 <div className="grid gap-2 md:grid-cols-[300px_1fr] md:gap-8 md:items-center">
@@ -265,14 +261,16 @@ export default function HomePage() {
                 </div>
               </article>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="border-y intel-divider bg-steel/70 py-20 md:py-24">
         <div className="section-wrap">
           <p className="kicker">Engagement Profiles</p>
-          <h2 className="section-title mt-3">Representative delivery model dossiers for advisory engagements.</h2>
+          <Reveal>
+            <h2 className="section-title mt-3">Representative delivery model dossiers for advisory engagements.</h2>
+          </Reveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {engagementProfiles.map((profile) => (
               <article key={profile.title} className="intel-panel p-6">
@@ -306,8 +304,10 @@ export default function HomePage() {
       </section>
 
       <section className="section-wrap py-20 md:py-24">
-        <p className="kicker">Who We Support</p>
-        <h2 className="section-title mt-3">Advisory support across government and GovCon operating layers.</h2>
+        <Reveal>
+          <p className="kicker"><span className="tac-index">[03]</span>Who We Support</p>
+          <h2 className="section-title mt-3">Advisory support across government and GovCon operating layers.</h2>
+        </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-5">
           {supportedClientTypes.map((clientType) => (
             <article key={clientType} className="intel-panel p-5">
@@ -320,9 +320,11 @@ export default function HomePage() {
 
       <section className="border-y intel-divider bg-steel/70 py-20 md:py-24">
         <div className="section-wrap">
-          <p className="kicker">Representative Outcomes</p>
-          <h2 className="section-title mt-3">Operational case briefs with measurable mission results.</h2>
-          <div className="mt-10 intel-panel px-7">
+          <Reveal>
+            <p className="kicker"><span className="tac-index">[04]</span>Representative Outcomes</p>
+            <h2 className="section-title mt-3">Operational case briefs with measurable mission results.</h2>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-10 intel-panel px-7">
             {caseBriefs.map((brief) => (
               <article key={brief.title} className="brief-row last:border-b-0">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">Anonymized Case Brief</p>
@@ -338,7 +340,7 @@ export default function HomePage() {
                 </p>
               </article>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -362,15 +364,15 @@ export default function HomePage() {
 
       <section className="border-t intel-divider bg-steel/60 py-20 md:py-24">
         <div className="section-wrap grid gap-8 md:grid-cols-3">
-          <div className="intel-panel p-6">
+          <Reveal className="intel-panel p-6">
             <Radar className="h-6 w-6 text-teal" />
             <h3 className="mt-4 text-xl font-semibold text-white">Institutional Credibility</h3>
             <p className="mt-3 text-sm leading-7 text-slate">
               Advisory posture built to align with federal operational standards, compliance expectations, and
               executive communication norms.
             </p>
-          </div>
-          <div className="intel-panel p-6 md:col-span-2">
+          </Reveal>
+          <Reveal delay={0.1} className="intel-panel p-6 md:col-span-2">
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/75">Credentials and Framework Alignment</h3>
             <h2 className="mt-4 font-serif text-4xl font-semibold uppercase leading-[1] tracking-[0.03em] text-white md:text-5xl">
               Operating familiarity with mission-critical standards.
@@ -392,7 +394,7 @@ export default function HomePage() {
                 Access Capability Brief
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

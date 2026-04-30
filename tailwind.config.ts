@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: "#07111F",
-        slate: "#94A3B8",
-        card: "#132238",
-        steel: "#0D1B2A",
+          navy: "#050D18",
+          slate: "#94A3B8",
+          card: "#0D1E31",
+          steel: "#091520",
         white: "#FFFFFF",
         teal: "#14B8A6"
       },

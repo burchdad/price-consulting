@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { BriefcaseBusiness, Building2, FileBadge2, ShieldCheck, Waypoints } from "lucide-react";
+import Reveal from "@/components/reveal";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -60,10 +61,12 @@ const credentials = ["FAR / DFARS", "FedRAMP", "CMMC", "NIST 800-53 / 800-171", 
 export default function ServicesPage() {
   return (
     <section className="section-wrap py-16 md:py-24">
-      <p className="kicker">Advisory Capability Matrix</p>
-      <h1 className="section-title mt-3">Mission support domains structured for federal delivery realities.</h1>
+      <Reveal>
+        <p className="kicker"><span className="tac-index">[01]</span>Advisory Capability Matrix</p>
+        <h1 className="section-title mt-3">Mission support domains structured for federal delivery realities.</h1>
+      </Reveal>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
+      <Reveal delay={0.1} className="mt-10 grid gap-5 md:grid-cols-2">
         {capabilityDomains.map((domain) => (
           <article key={domain.title} className="intel-panel p-6">
             <div className="flex items-center justify-between gap-4">
@@ -81,9 +84,9 @@ export default function ServicesPage() {
             </p>
           </article>
         ))}
-      </div>
+      </Reveal>
 
-      <div className="mt-12 intel-panel px-7 shadow-panel">
+      <Reveal delay={0.08} className="mt-12 intel-panel px-7 shadow-panel">
         {engagementDossiers.map((dossier) => (
           <article key={dossier.title} className="brief-row last:border-b-0">
             <h2 className="text-lg font-semibold text-white md:text-xl">{dossier.title}</h2>
@@ -111,7 +114,7 @@ export default function ServicesPage() {
             </div>
           </article>
         ))}
-      </div>
+      </Reveal>
 
       <div className="mt-12 flex flex-wrap gap-3">
         {credentials.map((credential) => (

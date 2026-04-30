@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #07111f;
-  --bg-secondary: #0d1b2a;
-  --bg-card: #132238;
+  --bg-primary: #040c17;
+  --bg-secondary: #081420;
+  --bg-card: #0d1e31;
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --accent: #14b8a6;
@@ -24,9 +24,9 @@ body {
 body {
   color: var(--text-secondary);
   background:
-    radial-gradient(1000px 620px at -5% -20%, rgba(20, 184, 166, 0.14), transparent 62%),
-    radial-gradient(900px 540px at 108% -8%, rgba(248, 250, 252, 0.06), transparent 48%),
-    linear-gradient(180deg, #081423 0%, #07111f 38%, #0a1727 100%);
+    radial-gradient(1000px 620px at -5% -20%, rgba(20, 184, 166, 0.11), transparent 58%),
+    radial-gradient(900px 540px at 108% -8%, rgba(248, 250, 252, 0.04), transparent 45%),
+    linear-gradient(180deg, #050e1a 0%, #040c17 38%, #060f1c 100%);
   min-height: 100vh;
 }
 
@@ -35,11 +35,40 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
+  z-index: 0;
   background-image: linear-gradient(rgba(148, 163, 184, 0.09) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148, 163, 184, 0.09) 1px, transparent 1px);
-  background-size: 38px 38px;
-  mask-image: radial-gradient(circle at center, black 12%, transparent 84%);
-  opacity: 0.2;
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 20%, transparent 100%);
+  opacity: 0.18;
+}
+
+/* Ambient gradient drift — extremely subtle, gives the dark bg a sense of depth */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 900px 650px at 15% 45%, rgba(20, 184, 166, 0.045), transparent 70%),
+    radial-gradient(ellipse 700px 500px at 85% 60%, rgba(148, 163, 184, 0.025), transparent 65%);
+  animation: ambientDrift 38s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes ambientDrift {
+  0%   { transform: translateX(0)    translateY(0)    scale(1); }
+  35%  { transform: translateX(2.5%) translateY(-2%)  scale(1.025); }
+  65%  { transform: translateX(-2%)  translateY(2.5%) scale(0.985); }
+  100% { transform: translateX(1.5%) translateY(1%)   scale(1.015); }
+}
+
+@keyframes scanline {
+  0%   { top: -2px;  opacity: 0; }
+  4%   { opacity: 1; }
+  96%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
 }
 
 .section-wrap {
@@ -65,20 +94,38 @@ body::before {
 }
 
 .intel-panel {
-  @apply rounded-md border border-white/10 bg-[rgba(13,27,42,0.88)] transition-[border-color,box-shadow] duration-200;
+  @apply rounded-md border border-white/10 bg-[rgba(8,20,32,0.92)] transition-[border-color,box-shadow] duration-200;
 }
 
 .intel-panel:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.06);
+  border-color: rgba(20, 184, 166, 0.22);
+  box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.08), 0 0 20px -6px rgba(20, 184, 166, 0.07);
 }
 
 .brief-row {
-  @apply border-b border-white/10 py-5 transition-colors duration-150;
+  @apply relative border-b border-white/10 py-5 transition-[background-color] duration-200;
 }
 
 .brief-row:hover {
-  background-color: rgba(255, 255, 255, 0.018);
+  background-color: rgba(20, 184, 166, 0.028);
+}
+
+/* Tactical accent line on brief-row hover */
+.brief-row::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(20, 184, 166, 0.55);
+  transform: scaleY(0);
+  transition: transform 0.18s ease;
+  transform-origin: center;
+}
+
+.brief-row:hover::before {
+  transform: scaleY(1);
 }
 
 .cta-primary {
@@ -108,3 +155,21 @@ body::before {
 .fade-up-d2 { animation-delay: 0.16s; }
 .fade-up-d3 { animation-delay: 0.24s; }
 .fade-up-d4 { animation-delay: 0.32s; }
+
+/* Tactical corner marks */
+.tac-corner {
+  @apply pointer-events-none absolute;
+}
+
+.tac-corner-tl {
+  @apply left-3 top-3 h-2 w-2 border-l border-t border-teal/20;
+}
+
+.tac-corner-br {
+  @apply bottom-3 right-3 h-2 w-2 border-b border-r border-teal/20;
+}
+
+/* Tactical section index label */
+.tac-index {
+  @apply mr-2 font-mono text-teal/35;
+}
