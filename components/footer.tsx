@@ -78,6 +78,34 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        <div className="mt-10 rounded-xl border border-white/10 bg-card/50 p-6 md:p-7">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal/80">Operational Trust Profile</p>
+          <div className="mt-5 grid gap-6 md:grid-cols-3">
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Headquarters / Region</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Washington, DC Metro Region
+                <br />
+                HQ: {company.address.streetAddress}, {company.address.addressLocality}, {company.address.addressRegion}
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Certifications</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                <li>Small business certification details available upon request</li>
+                <li>Security and compliance competency alignment maintained</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Registration / Classification</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                <li>SAM registration: Active status documentation placeholder</li>
+                <li>Set-Aside / Classification: Placeholder for NAICS and socioeconomic details</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-slate-400">
         Copyright {new Date().getFullYear()} {company.name}. All rights reserved.

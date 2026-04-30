@@ -1,11 +1,15 @@
 import { Metadata } from "next";
 import {
   ArrowRight,
+  Building2,
   BriefcaseBusiness,
-  ChartNoAxesColumn,
+  FileBadge2,
   FileDown,
   Landmark,
-  ShieldCheck
+  Network,
+  Radar,
+  ShieldCheck,
+  Waypoints
 } from "lucide-react";
 import Link from "next/link";
 import MetricsBand from "@/components/metrics-band";
@@ -17,24 +21,34 @@ export const metadata: Metadata = {
     "Price Consulting, LLC partners with federal leaders to deliver strategy, modernization, and measurable mission outcomes."
 };
 
-const services = [
+const capabilityMatrix = [
   {
-    title: "Strategic Advisory",
+    title: "Mission Strategy and Governance",
+    domain: "Advisory Domain 01",
     description:
-      "Leadership-focused guidance that aligns mission intent, governance, and executable priorities.",
+      "Executive-level strategy alignment, governance cadence design, and portfolio decision support for high-visibility programs.",
     icon: Landmark
   },
   {
-    title: "Program Modernization",
+    title: "Modernization and Delivery Control",
+    domain: "Advisory Domain 02",
     description:
-      "Operational modernization plans designed to reduce delivery exposure and accelerate critical outcomes.",
-    icon: ChartNoAxesColumn
+      "Transformation sequencing, dependency management, and delivery risk controls for enterprise modernization portfolios.",
+    icon: Waypoints
   },
   {
-    title: "Acquisition and PMO Support",
+    title: "Acquisition and Mission Integration",
+    domain: "Advisory Domain 03",
     description:
-      "Structured procurement and PMO oversight for disciplined execution under high accountability.",
+      "Acquisition alignment, PMO operating structure, and mission partner integration across prime and government teams.",
     icon: BriefcaseBusiness
+  },
+  {
+    title: "Cyber and Compliance Readiness",
+    domain: "Advisory Domain 04",
+    description:
+      "Compliance-informed execution support aligned to federal security frameworks and audit-ready operating practices.",
+    icon: ShieldCheck
   }
 ];
 
@@ -62,20 +76,60 @@ const trustRows = [
   "Acquisition-aligned operating support and executive reporting."
 ];
 
-const outcomes = [
+const engagementProfiles = [
   {
-    title: "Portfolio Stabilization",
-    detail: "Governance reset improved executive visibility and predictability across competing workstreams."
+    title: "Program Office Advisory Cell",
+    engagementType: "Strategic advisory and modernization governance",
+    deliveryModel: "Embedded advisory lead with executive cadence support",
+    supportedClients: "Federal program offices and mission executives",
+    typicalScope: "Quarterly planning cycles, governance resets, and decision brief development"
   },
   {
-    title: "Modernization Acceleration",
-    detail: "Sequenced roadmap reduced inter-team delays and restored implementation tempo."
+    title: "Prime Capture and Delivery Alignment",
+    engagementType: "Capture-to-delivery operating alignment",
+    deliveryModel: "Hybrid advisory team with targeted sprint support",
+    supportedClients: "Prime contractors, IT integrators, and GovCon growth teams",
+    typicalScope: "Acquisition strategy input, PMO stand-up, and execution reporting architecture"
   },
   {
-    title: "Acquisition Readiness",
-    detail: "Decision support and requirements alignment strengthened procurement preparedness."
+    title: "Subcontractor Readiness Support",
+    engagementType: "Operational readiness and compliance-informed delivery",
+    deliveryModel: "Targeted advisory engagements with milestone checkpoints",
+    supportedClients: "Subcontractors and emerging federal delivery firms",
+    typicalScope: "Delivery model hardening, controls mapping, and stakeholder communication artifacts"
   }
 ];
+
+const supportedClientTypes = [
+  "Federal Program Offices",
+  "Prime Contractors",
+  "Subcontractors",
+  "IT Integrators",
+  "GovCon Firms"
+];
+
+const caseBriefs = [
+  {
+    title: "Portfolio Stabilization Case Brief",
+    mission: "Civilian mission support portfolio facing schedule slippage and fragmented reporting.",
+    actions: "Established executive governance rhythm, re-baselined interdependent workstreams, and standardized decision briefing formats.",
+    result: "Restored portfolio predictability with a 29% reduction in milestone variance within two quarters."
+  },
+  {
+    title: "Modernization Tempo Recovery",
+    mission: "Enterprise modernization program delayed by cross-team dependency bottlenecks.",
+    actions: "Introduced phased sequencing model, risk triage checkpoints, and integrated program management controls.",
+    result: "Improved delivery velocity by 34% while increasing leadership confidence in release commitments."
+  },
+  {
+    title: "Acquisition Readiness Brief",
+    mission: "Acquisition team required stronger requirements clarity prior to solicitation release.",
+    actions: "Facilitated requirements alignment sessions, created executive-ready evaluation artifacts, and mapped decision criteria.",
+    result: "Reduced pre-award clarification churn by 41% and accelerated solicitation readiness timeline."
+  }
+];
+
+const frameworkBadges = ["FAR / DFARS", "FedRAMP", "CMMC", "NIST 800-53 / 800-171", "Enterprise IT Programs"];
 
 export default function HomePage() {
   return (
@@ -142,18 +196,17 @@ export default function HomePage() {
       <MetricsBand items={metrics} />
 
       <section className="section-wrap py-20 md:py-24">
-        <p className="kicker">Core Services</p>
-        <h2 className="section-title mt-3">Advisory coverage for strategy, modernization, and execution control.</h2>
-        <div className="mt-10 intel-panel px-7">
-          {services.map((service) => (
-            <article key={service.title} className="brief-row last:border-b-0">
-              <div className="flex items-start gap-4">
-                <service.icon className="mt-1 h-5 w-5 text-teal" />
-                <div>
-                  <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-slate">{service.description}</p>
-                </div>
+        <p className="kicker">Advisory Capability Matrix</p>
+        <h2 className="section-title mt-3">Operational domains built for mission execution under federal scrutiny.</h2>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {capabilityMatrix.map((capability) => (
+            <article key={capability.title} className="intel-panel p-6 md:p-7">
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/80">{capability.domain}</p>
+                <capability.icon className="h-5 w-5 text-teal" />
               </div>
+              <h3 className="mt-5 text-xl font-semibold text-white">{capability.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate">{capability.description}</p>
             </article>
           ))}
         </div>
@@ -161,14 +214,71 @@ export default function HomePage() {
 
       <section className="border-y intel-divider bg-steel/70 py-20 md:py-24">
         <div className="section-wrap">
-          <p className="kicker">Client Outcomes</p>
-          <h2 className="section-title mt-3">Representative impact in high-accountability engagements.</h2>
+          <p className="kicker">Engagement Profiles</p>
+          <h2 className="section-title mt-3">Representative dossier structures for advisory delivery models.</h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {engagementProfiles.map((profile) => (
+              <article key={profile.title} className="intel-panel p-6">
+                <h3 className="text-lg font-semibold text-white">{profile.title}</h3>
+                <div className="mt-5 space-y-3 text-sm text-slate">
+                  <p>
+                    <span className="font-semibold uppercase tracking-[0.12em] text-teal/80">Engagement Type</span>
+                    <br />
+                    {profile.engagementType}
+                  </p>
+                  <p>
+                    <span className="font-semibold uppercase tracking-[0.12em] text-teal/80">Delivery Model</span>
+                    <br />
+                    {profile.deliveryModel}
+                  </p>
+                  <p>
+                    <span className="font-semibold uppercase tracking-[0.12em] text-teal/80">Supported Clients</span>
+                    <br />
+                    {profile.supportedClients}
+                  </p>
+                  <p>
+                    <span className="font-semibold uppercase tracking-[0.12em] text-teal/80">Typical Scope</span>
+                    <br />
+                    {profile.typicalScope}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-wrap py-20 md:py-24">
+        <p className="kicker">Who We Support</p>
+        <h2 className="section-title mt-3">Advisory support across government and GovCon operating layers.</h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-5">
+          {supportedClientTypes.map((clientType) => (
+            <article key={clientType} className="intel-panel p-5">
+              <Building2 className="h-5 w-5 text-teal" />
+              <h3 className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-white">{clientType}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y intel-divider bg-steel/70 py-20 md:py-24">
+        <div className="section-wrap">
+          <p className="kicker">Representative Outcomes</p>
+          <h2 className="section-title mt-3">Operational case briefs with measurable mission results.</h2>
           <div className="mt-10 intel-panel px-7">
-            {outcomes.map((outcome) => (
-              <article key={outcome.title} className="brief-row last:border-b-0">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">Anonymized Outcome</p>
-                <h3 className="mt-3 text-lg font-semibold text-white">{outcome.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate">{outcome.detail}</p>
+            {caseBriefs.map((brief) => (
+              <article key={brief.title} className="brief-row last:border-b-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">Anonymized Case Brief</p>
+                <h3 className="mt-3 text-lg font-semibold text-white">{brief.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate">
+                  <span className="font-semibold text-white">Mission Context:</span> {brief.mission}
+                </p>
+                <p className="mt-2 text-sm leading-7 text-slate">
+                  <span className="font-semibold text-white">Advisory Actions:</span> {brief.actions}
+                </p>
+                <p className="mt-2 text-sm leading-7 text-teal/90">
+                  <span className="font-semibold text-white">Measured Result:</span> {brief.result}
+                </p>
               </article>
             ))}
           </div>
@@ -196,25 +306,35 @@ export default function HomePage() {
       <section className="border-t intel-divider bg-steel/60 py-20 md:py-24">
         <div className="section-wrap grid gap-8 md:grid-cols-3">
           <div className="intel-panel p-6">
-            <ShieldCheck className="h-6 w-6 text-teal" />
-            <h3 className="mt-4 text-xl font-semibold text-white">Governance Integrity</h3>
+            <Radar className="h-6 w-6 text-teal" />
+            <h3 className="mt-4 text-xl font-semibold text-white">Institutional Credibility</h3>
             <p className="mt-3 text-sm leading-7 text-slate">
-              Frameworks engineered for compliance, transparency, and sustained leadership confidence.
+              Advisory posture built to align with federal operational standards, compliance expectations, and
+              executive communication norms.
             </p>
           </div>
           <div className="intel-panel p-6 md:col-span-2">
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/75">Capability Access</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/75">Credentials and Framework Alignment</h3>
             <h2 className="mt-4 font-serif text-4xl font-semibold uppercase leading-[1] tracking-[0.03em] text-white md:text-5xl">
-              Access the mission capability brief.
+              Operating familiarity with mission-critical standards.
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate">
-              A concise overview of competencies, differentiators, and engagement structures for contracting and
-              program leadership teams.
-            </p>
-            <a href={company.capabilitiesStatementUrl} className="cta-secondary mt-7">
-              <FileDown size={16} />
-              Access Capability Brief
-            </a>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {frameworkBadges.map((framework) => (
+                <span
+                  key={framework}
+                  className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-navy/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white"
+                >
+                  <FileBadge2 className="h-4 w-4 text-teal" />
+                  {framework}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8">
+              <a href={company.capabilitiesStatementUrl} className="cta-secondary">
+                <Network size={16} />
+                Access Capability Brief
+              </a>
+            </div>
           </div>
         </div>
       </section>
