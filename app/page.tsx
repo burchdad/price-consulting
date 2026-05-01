@@ -1,16 +1,13 @@
 import { Metadata } from "next";
+import CapabilityConsole from "@/components/capability-console";
 import CaseBriefsPanel from "@/components/case-briefs-panel";
 import {
   ArrowRight,
   Building2,
-  BriefcaseBusiness,
   FileBadge2,
   FileDown,
-  Landmark,
   Network,
-  Radar,
-  ShieldCheck,
-  Waypoints
+  Radar
 } from "lucide-react";
 import Link from "next/link";
 import MetricsBand from "@/components/metrics-band";
@@ -23,45 +20,6 @@ export const metadata: Metadata = {
   description:
     "Price Consulting, LLC partners with federal leaders to deliver strategy, modernization, and measurable mission outcomes."
 };
-
-const capabilityMatrix = [
-  {
-    title: "Mission Strategy and Governance",
-    domain: "Advisory Domain 01",
-    description:
-      "Executive-level strategy alignment, governance cadence design, and portfolio decision support for high-visibility programs.",
-    impact:
-      "Reduce strategic drift, sharpen decision traceability, and sustain leadership confidence across competing program priorities.",
-    icon: Landmark
-  },
-  {
-    title: "Modernization and Delivery Control",
-    domain: "Advisory Domain 02",
-    description:
-      "Transformation sequencing, dependency management, and delivery risk controls for enterprise modernization portfolios.",
-    impact:
-      "Compress delivery timelines, cut schedule variance, and give stakeholders a credible and defensible modernization posture.",
-    icon: Waypoints
-  },
-  {
-    title: "Acquisition and Mission Integration",
-    domain: "Advisory Domain 03",
-    description:
-      "Acquisition alignment, PMO operating structure, and mission partner integration across prime and government teams.",
-    impact:
-      "Reduce procurement delays, strengthen awardability, and improve downstream execution outcomes before money is obligated.",
-    icon: BriefcaseBusiness
-  },
-  {
-    title: "Cyber and Compliance Readiness",
-    domain: "Advisory Domain 04",
-    description:
-      "Compliance-informed execution support aligned to federal security frameworks and audit-ready operating practices.",
-    impact:
-      "Harden delivery posture against compliance failures and enable controlled, audit-ready program execution under scrutiny.",
-    icon: ShieldCheck
-  }
-];
 
 const missionEnvironments = [
   {
@@ -215,22 +173,9 @@ export default function HomePage() {
           <p className="kicker"><span className="tac-index">[01]</span>Advisory Capability Matrix</p>
           <h2 className="section-title mt-3">Operational domains built for mission execution under federal scrutiny.</h2>
         </Reveal>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {capabilityMatrix.map((capability) => (
-            <article key={capability.title} className="intel-panel p-6 md:p-7">
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal/80">{capability.domain}</p>
-                <capability.icon className="h-5 w-5 text-teal" />
-              </div>
-              <h3 className="mt-5 text-xl font-semibold text-white">{capability.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate">{capability.description}</p>
-              <div className="mt-5 border-t border-white/10 pt-4">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-teal/70">Why It Matters</p>
-                <p className="mt-2 text-xs leading-6 text-slate/80">{capability.impact}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <Reveal delay={0.1}>
+          <CapabilityConsole />
+        </Reveal>
       </section>
 
       <section className="border-y intel-divider relative overflow-hidden py-20 md:py-24">
